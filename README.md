@@ -1,6 +1,6 @@
 # sphinx-autodoc-toolbox
 
-Extra directives for sphinx autodoc
+Extensions for sphinx autodoc
 
 - GitHub: https://github.com/haiiliin/sphinx-autodoc-toolbox/
 - Documentation: https://sphinx-autodoc-toolbox.readthedocs.io/en/latest/

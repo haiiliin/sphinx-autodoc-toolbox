@@ -9,7 +9,7 @@ name = "sphinx-autodoc-toolbox"
 authors = [
   { name="WANG Hailin", email="hailin.wang@connect.polyu.hk" },
 ]
-description = "Extra directives for sphinx autodoc"
+description = "Extensions for sphinx autodoc"
 readme = "README.md"
 dynamic = ["version"]
 requires-python = ">=3.7"
