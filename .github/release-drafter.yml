@@ -48,4 +48,4 @@ template: |
 
   $CHANGES
 
-  **Full Changelog**: https://github.com/{{cookiecutter.github_account}}/{{cookiecutter.repo_name}}/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+  **Full Changelog**: https://github.com/haiiliin/sphinx-autodoc-toolbox/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
