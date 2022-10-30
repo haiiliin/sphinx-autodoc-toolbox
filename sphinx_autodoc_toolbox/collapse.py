@@ -17,12 +17,13 @@ class AutoCollapsibleClassDocumenter(ClassDocumenter):
             self.add_line('', sourcename)
             self.add_line('.. rubric:: Member Details:', sourcename)
             self.add_line('', sourcename)
-            self.add_line('.. collapse:: Click here to Expand', sourcename)
-            self.indent += ' ' * 3
+            self.add_line('.. toggle::', sourcename)
+            self.add_line('', sourcename)
+            self.indent += ' ' * 4
         super().document_members(all_members)
 
 
 def setup(app: Sphinx) -> None:
     app.setup_extension('sphinx.ext.autodoc')  # Require autodoc extension
-    app.setup_extension('sphinx_toolbox.collapse')  # Require sphinx_toolbox.collapse extension
+    app.setup_extension('sphinx_togglebutton')  # Require sphinx-togglebutton extension
     app.add_autodocumenter(AutoCollapsibleClassDocumenter)
