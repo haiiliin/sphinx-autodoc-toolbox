@@ -1,1 +1,1 @@
-numpy
+sphinx-toolbox
