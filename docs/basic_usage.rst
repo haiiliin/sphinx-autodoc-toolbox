@@ -15,7 +15,7 @@ Extensions
 ----------
 
 Collapsible members
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 To use the collapsible members for autoclass, add the following to your Sphinx configuration file::
 
