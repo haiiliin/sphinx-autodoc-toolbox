@@ -22,10 +22,11 @@ class PythonDomain(SphinxPythonDomain):
         node: pending_xref,
         contnode: Element,
     ) -> Optional[Element]:
-        for tar in target.split(self.separator):
-            res = super().resolve_xref(env, fromdocname, builder, type, tar, node, contnode)
-            if res:
-                return res
+        targets = target.split(self.separator)
+        for index, target in enumerate(targets):
+            element = super().resolve_xref(env, fromdocname, builder, type, target, node, contnode)
+            if element:
+                return element
 
     def resolve_any_xref(
         self,
@@ -36,10 +37,11 @@ class PythonDomain(SphinxPythonDomain):
         node: pending_xref,
         contnode: Element,
     ) -> List[Tuple[str, Element]]:
-        for tar in target.split(self.separator):
-            res = super().resolve_any_xref(env, fromdocname, builder, tar, node, contnode)
-            if res:
-                return res
+        targets = target.split(self.separator)
+        for index, target in enumerate(targets):
+            results = super().resolve_any_xref(env, fromdocname, builder, target, node, contnode)
+            if results:
+                return results
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
