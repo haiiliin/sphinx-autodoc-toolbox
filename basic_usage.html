@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic Usage &mdash; sphinx-autodoc-toolbox 0.0.1.post7 documentation</title>
+  <title>Basic Usage &mdash; sphinx-autodoc-toolbox 0.0.2.post7 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
@@ -41,7 +41,7 @@
             <a href="index.html" class="icon icon-home"> sphinx-autodoc-toolbox
           </a>
               <div class="version">
-                0.0.1.post7
+                0.0.2.post7
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -57,9 +57,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#extensions">Extensions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#collapsible-members">Collapsible members</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#example.Example"><code class="docutils literal notranslate"><span class="pre">Example</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example.Parent"><code class="docutils literal notranslate"><span class="pre">Parent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example.Child"><code class="docutils literal notranslate"><span class="pre">Child</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#cross-references-to-python-targets-with-multiple-targets">Cross references to Python targets with multiple targets</a></li>
 </ul>
 </li>
 </ul>
@@ -79,8 +81,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Basic Usage</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Basic Usage</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/basic_usage.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -113,8 +115,43 @@
 <p>Then, in your documentation, use the <cite>autodoc</cite> directives to generate the docs just as you would normally.
 below if an example incorporating with the <a class="reference external" href="https://github.com/kalekundert/autoclasstoc">autoclasstoc</a> extension:</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="example.Example">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">example.</span></span><span class="sig-name descname"><span class="pre">Example</span></span><a class="headerlink" href="#example.Example" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="example.Parent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">example.</span></span><span class="sig-name descname"><span class="pre">Parent</span></span><a class="headerlink" href="#example.Parent" title="Permalink to this definition"></a></dt>
+<dd><div class="autoclasstoc docutils container">
+<p class="rubric">Public Methods:</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#example.Parent.parent_method" title="example.Parent.parent_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent_method</span></code></a>()</p></td>
+<td><p>This is a parent method.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<p class="rubric">Member Details:</p>
+<div class="toggle docutils container">
+<dl class="py attribute">
+<dt class="sig sig-object py" id="example.Parent.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#example.Parent.__weakref__" title="Permalink to this definition"></a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="example.Parent.parent_method">
+<span class="sig-name descname"><span class="pre">parent_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#example.Parent.parent_method" title="Permalink to this definition"></a></dt>
+<dd><p>This is a parent method.</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="example.Child">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">example.</span></span><span class="sig-name descname"><span class="pre">Child</span></span><a class="headerlink" href="#example.Child" title="Permalink to this definition"></a></dt>
 <dd><p>This is an example class</p>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Public Data Attributes:</p>
@@ -124,7 +161,7 @@ below if an example incorporating with the <a class="reference external" href="h
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#example.Example.attribute" title="example.Example.attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">attribute</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#example.Child.attribute" title="example.Child.attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">attribute</span></code></a></p></td>
 <td><p>This is a public attribute</p></td>
 </tr>
 </tbody>
@@ -138,15 +175,29 @@ below if an example incorporating with the <a class="reference external" href="h
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#example.Example.__init__" title="example.Example.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#example.Child.__init__" title="example.Child.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
 <td><p>This is the constructor of the Example class</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#example.Example.public_method" title="example.Example.public_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">public_method</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#example.Child.public_method" title="example.Child.public_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">public_method</span></code></a>()</p></td>
 <td><p>This is a public method</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#example.Child.parent_method" title="example.Child.parent_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent_method</span></code></a>()</p></td>
+<td><p>This is a derived method from the parent class</p></td>
 </tr>
 </tbody>
 </table>
-</div>
+<details><summary>Inherited from <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parent</span></code></a></summary><table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#example.Parent.parent_method" title="example.Parent.parent_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent_method</span></code></a>()</p></td>
+<td><p>This is a parent method.</p></td>
+</tr>
+</tbody>
+</table>
+</details></div>
 <div class="autoclasstoc docutils container">
 <p class="rubric">Private Methods:</p>
 <table class="autosummary longtable docutils align-default">
@@ -155,7 +206,7 @@ below if an example incorporating with the <a class="reference external" href="h
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#example.Example._private_method" title="example.Example._private_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_private_method</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#example.Child._private_method" title="example.Child._private_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_private_method</span></code></a>()</p></td>
 <td><p>This is a private method</p></td>
 </tr>
 </tbody>
@@ -165,38 +216,52 @@ below if an example incorporating with the <a class="reference external" href="h
 <p class="rubric">Member Details:</p>
 <div class="toggle docutils container">
 <dl class="py method">
-<dt class="sig sig-object py" id="example.Example.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#example.Example.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="example.Child.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#example.Child.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>This is the constructor of the Example class</p>
 </dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="example.Example.__weakref__">
-<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#example.Example.__weakref__" title="Permalink to this definition"></a></dt>
-<dd><p>list of weak references to the object (if defined)</p>
-</dd></dl>
-
 <dl class="py method">
-<dt class="sig sig-object py" id="example.Example._private_method">
-<span class="sig-name descname"><span class="pre">_private_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#example.Example._private_method" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="example.Child._private_method">
+<span class="sig-name descname"><span class="pre">_private_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#example.Child._private_method" title="Permalink to this definition"></a></dt>
 <dd><p>This is a private method</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="example.Example.attribute">
-<span class="sig-name descname"><span class="pre">attribute</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#example.Example.attribute" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="example.Child.attribute">
+<span class="sig-name descname"><span class="pre">attribute</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#example.Child.attribute" title="Permalink to this definition"></a></dt>
 <dd><p>This is a public attribute</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="example.Example.public_method">
-<span class="sig-name descname"><span class="pre">public_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#example.Example.public_method" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="example.Child.parent_method">
+<span class="sig-name descname"><span class="pre">parent_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#example.Child.parent_method" title="Permalink to this definition"></a></dt>
+<dd><p>This is a derived method from the parent class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="example.Child.public_method">
+<span class="sig-name descname"><span class="pre">public_method</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#example.Child.public_method" title="Permalink to this definition"></a></dt>
 <dd><p>This is a public method</p>
 </dd></dl>
 
 </div>
 </dd></dl>
 
+</section>
+<section id="cross-references-to-python-targets-with-multiple-targets">
+<h3>Cross references to Python targets with multiple targets<a class="headerlink" href="#cross-references-to-python-targets-with-multiple-targets" title="Permalink to this heading"></a></h3>
+<p>You can use the following syntax to create a cross reference to multiple targets, only the first target that exists will be rendered:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:py:class:`example.Parent|example.Unknown`
+:py:class:`example.Unknown|example.Parent`
+</pre></div>
+</div>
+<p>The above two code will render as <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">example.Parent|example.Unknows</span></code></a> and <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">example.Unknow|example.Parent</span></code></a>. To use this feature, add the following to your Sphinx configuration file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx_autodoc_toolbox.mpython&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
