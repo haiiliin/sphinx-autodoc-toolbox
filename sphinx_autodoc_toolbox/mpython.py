@@ -7,9 +7,6 @@ from sphinx.builders import Builder
 from sphinx.domains.python import PythonDomain as SphinxPythonDomain
 from sphinx.domains.python import filter_meta_fields, builtin_resolver
 from sphinx.environment import BuildEnvironment
-from sphinx.util import logging
-
-logger = logging.getLogger(__name__)
 
 
 class PythonDomain(SphinxPythonDomain):
@@ -48,7 +45,7 @@ class PythonDomain(SphinxPythonDomain):
 def setup(app: Sphinx) -> Dict[str, Any]:
     app.setup_extension("sphinx.directives")
 
-    app.add_domain(PythonDomain, True)
+    app.add_domain(PythonDomain, override=True)
     app.connect("object-description-transform", filter_meta_fields)
     app.connect("missing-reference", builtin_resolver, priority=900)
 
