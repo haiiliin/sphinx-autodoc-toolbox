@@ -53,3 +53,33 @@ The above two snippets will render as :py:class:`example.Parent|example.Unknown`
     extensions = [
         'sphinx_autodoc_toolbox.multiple_targets',
     ]
+
+In the `autosummary` directive, you can use the following syntax to create a cross reference to multiple targets::
+
+    .. autosummary::
+
+        example.Parent.parent_method|example.Child.parent_method
+
+Which will rendered as:
+
+.. autosummary::
+
+    example.Parent.parent_method|example.Child.parent_method
+
+You can also specify the displayed name of the cross reference using `:`::
+
+    .. autosummary::
+
+        example.Parent.parent_method|example.Child.parent_method:parent_method
+
+Which will rendered as:
+
+.. autosummary::
+
+    example.Parent.parent_method|example.Child.parent_method:parent_method
+
+In order to use this feature, you must add the following to your Sphinx configuration file::
+
+    extensions = [
+        'sphinx_autodoc_toolbox.autosummary_multiple_targets',
+    ]

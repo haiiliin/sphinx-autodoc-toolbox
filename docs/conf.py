@@ -32,6 +32,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx_autodoc_toolbox.collapse',
     'sphinx_autodoc_toolbox.multiple_targets',
+    'sphinx_autodoc_toolbox.autosummary_multiple_targets',
     'sphinx_copybutton',
 ]
 
