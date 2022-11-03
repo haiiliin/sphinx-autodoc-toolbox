@@ -25,7 +25,6 @@ To use the collapsible members for autoclass, add the following to your Sphinx c
 
 Then, in your documentation, use the `autodoc` directives to generate the docs just as you would normally. 
 below if an example incorporating with the `autoclasstoc <https://github.com/kalekundert/autoclasstoc>`_ extension:
-:py:class:`example.Parent|example.Example`
 
 .. autoclass:: example.Parent
     :members:
@@ -40,3 +39,17 @@ below if an example incorporating with the `autoclasstoc <https://github.com/kal
     :special-members:
 
     .. autoclasstoc::
+
+Cross references to Python targets with multiple targets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the following syntax to create a cross reference to multiple targets, only the first target that exists will be rendered::
+
+    :py:class:`example.Parent|example.Unknow`
+    :py:class:`example.Unknow|example.Parent`
+
+This will render as :py:class:`example.Parent|example.Unknows` and :py:class:`example.Unknow|example.Parent`. To use this feature, add the following to your Sphinx configuration file::
+
+    extensions = [
+        'sphinx_autodoc_toolbox.mpython',
+    ]
