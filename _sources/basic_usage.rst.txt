@@ -60,7 +60,7 @@ In the `autosummary` directive, you can use the following syntax to create a cro
 
         example.Parent.parent_method|example.Child.parent_method
 
-Which will rendered as:
+Which will be rendered as:
 
 .. autosummary::
 
@@ -72,7 +72,7 @@ You can also specify the displayed name of the cross reference using `:`::
 
         example.Parent.parent_method|example.Child.parent_method:parent_method
 
-Which will rendered as:
+Which will be rendered as:
 
 .. autosummary::
 
