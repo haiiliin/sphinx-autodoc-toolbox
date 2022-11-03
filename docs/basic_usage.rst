@@ -25,8 +25,16 @@ To use the collapsible members for autoclass, add the following to your Sphinx c
 
 Then, in your documentation, use the `autodoc` directives to generate the docs just as you would normally. 
 below if an example incorporating with the `autoclasstoc <https://github.com/kalekundert/autoclasstoc>`_ extension:
+:py:class:`example.Parent|example.Example`
 
-.. autoclass:: example.Example
+.. autoclass:: example.Parent
+    :members:
+    :private-members:
+    :special-members:
+
+    .. autoclasstoc::
+
+.. autoclass:: example.Child
     :members:
     :private-members:
     :special-members:
