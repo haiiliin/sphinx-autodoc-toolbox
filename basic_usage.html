@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic Usage &mdash; sphinx-autodoc-toolbox 0.0.2.post10 documentation</title>
+  <title>Basic Usage &mdash; sphinx-autodoc-toolbox 0.0.2.post14 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
@@ -41,7 +41,7 @@
             <a href="index.html" class="icon icon-home"> sphinx-autodoc-toolbox
           </a>
               <div class="version">
-                0.0.2.post10
+                0.0.2.post14
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -61,7 +61,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#example.Child"><code class="docutils literal notranslate"><span class="pre">Child</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#cross-references-to-python-targets-with-multiple-targets">Cross references to Python targets with multiple targets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cross-references-to-python-objects-with-multiple-targets">Cross references to Python objects with multiple targets</a></li>
 </ul>
 </li>
 </ul>
@@ -249,8 +249,8 @@ below if an example incorporating with the <a class="reference external" href="h
 </dd></dl>
 
 </section>
-<section id="cross-references-to-python-targets-with-multiple-targets">
-<h3>Cross references to Python targets with multiple targets<a class="headerlink" href="#cross-references-to-python-targets-with-multiple-targets" title="Permalink to this heading"></a></h3>
+<section id="cross-references-to-python-objects-with-multiple-targets">
+<h3>Cross references to Python objects with multiple targets<a class="headerlink" href="#cross-references-to-python-objects-with-multiple-targets" title="Permalink to this heading"></a></h3>
 <p>You can use the following syntax to create a cross reference to multiple targets, only the first target that exists will be rendered:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:py:class:`example.Parent|example.Unknown`
 :py:class:`example.Unknown|example.Parent`
@@ -258,7 +258,49 @@ below if an example incorporating with the <a class="reference external" href="h
 </div>
 <p>The above two snippets will render as <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">example.Parent|example.Unknown</span></code></a> and <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">example.Unknow|example.Parent</span></code></a>. To use this feature, add the following to your Sphinx configuration file:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;sphinx_autodoc_toolbox.mpython&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx_autodoc_toolbox.pydomain_multiple_targets&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>In the <cite>autosummary</cite> directive, you can use the following syntax to create a cross reference to multiple targets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">autosummary</span><span class="p">::</span>
+
+    <span class="n">example</span><span class="o">.</span><span class="n">Parent</span><span class="o">.</span><span class="n">parent_method</span><span class="o">|</span><span class="n">example</span><span class="o">.</span><span class="n">Child</span><span class="o">.</span><span class="n">parent_method</span>
+</pre></div>
+</div>
+<p>Which will rendered as:</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#example.Parent.parent_method" title="example.Parent.parent_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">example.Parent.parent_method|example.Child.parent_method</span></code></a>()</p></td>
+<td><p>This is a parent method.</p></td>
+</tr>
+</tbody>
+</table>
+<p>You can also specify the displayed name of the cross reference using <cite>:</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">autosummary</span><span class="p">::</span>
+
+    <span class="n">example</span><span class="o">.</span><span class="n">Parent</span><span class="o">.</span><span class="n">parent_method</span><span class="o">|</span><span class="n">example</span><span class="o">.</span><span class="n">Child</span><span class="o">.</span><span class="n">parent_method</span><span class="p">:</span><span class="n">parent_method</span>
+</pre></div>
+</div>
+<p>Which will rendered as:</p>
+<table class="autosummary longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#example.Parent.parent_method" title="example.Parent.parent_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent_method</span></code></a>()</p></td>
+<td><p>This is a parent method.</p></td>
+</tr>
+</tbody>
+</table>
+<p>In order to use this feature, you must add the following to your Sphinx configuration file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx_autodoc_toolbox.autosummary_multiple_targets&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 </pre></div>
 </div>
