@@ -48,7 +48,7 @@ You can use the following syntax to create a cross reference to multiple targets
     :py:class:`example.Parent|example.Unknown`
     :py:class:`example.Unknown|example.Parent`
 
-The above two snippets will render as :py:class:`example.Parent|example.Unknows` and :py:class:`example.Unknow|example.Parent`. To use this feature, add the following to your Sphinx configuration file::
+The above two snippets will render as :py:class:`example.Parent|example.Unknown` and :py:class:`example.Unknow|example.Parent`. To use this feature, add the following to your Sphinx configuration file::
 
     extensions = [
         'sphinx_autodoc_toolbox.mpython',
