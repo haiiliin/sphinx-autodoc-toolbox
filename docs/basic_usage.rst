@@ -40,7 +40,7 @@ below if an example incorporating with the `autoclasstoc <https://github.com/kal
 
     .. autoclasstoc::
 
-Cross references to Python targets with multiple targets
+Cross references to Python objects with multiple targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use the following syntax to create a cross reference to multiple targets, only the first target that exists will be rendered::
@@ -51,5 +51,5 @@ You can use the following syntax to create a cross reference to multiple targets
 The above two snippets will render as :py:class:`example.Parent|example.Unknown` and :py:class:`example.Unknow|example.Parent`. To use this feature, add the following to your Sphinx configuration file::
 
     extensions = [
-        'sphinx_autodoc_toolbox.mpython',
+        'sphinx_autodoc_toolbox.multiple_targets',
     ]
