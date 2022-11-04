@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic Usage &mdash; sphinx-autodoc-toolbox 0.0.2.post20 documentation</title>
+  <title>Basic Usage &mdash; sphinx-autodoc-toolbox 0.0.2.post21 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
@@ -41,7 +41,7 @@
             <a href="index.html" class="icon icon-home"> sphinx-autodoc-toolbox
           </a>
               <div class="version">
-                0.0.2.post20
+                0.0.2.post21
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -282,10 +282,10 @@ below if an example incorporating with the <a class="reference external" href="h
 </tr>
 </tbody>
 </table>
-<p>You can also specify whose summary to use in the <cite>autosummary</cite> table:</p>
+<p>You can also specify a label in the <cite>autosummary</cite> table:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">autosummary</span><span class="p">::</span>
 
-    <span class="n">Child</span><span class="o">-&gt;</span><span class="n">example</span><span class="o">.</span><span class="n">Parent</span><span class="o">.</span><span class="n">parent_method</span><span class="o">|</span><span class="n">example</span><span class="o">.</span><span class="n">Child</span><span class="o">.</span><span class="n">parent_method</span>
+    <span class="n">example</span><span class="o">.</span><span class="n">Parent</span><span class="o">.</span><span class="n">parent_method</span><span class="o">|</span><span class="n">example</span><span class="o">.</span><span class="n">Child</span><span class="o">.</span><span class="n">parent_method</span><span class="p">:</span><span class="n">parent_method</span>
 </pre></div>
 </div>
 <p>Which will be rendered as:</p>
@@ -295,12 +295,11 @@ below if an example incorporating with the <a class="reference external" href="h
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#example.Parent.parent_method" title="example.Parent.parent_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">example.Child.parent_method</span></code></a>()</p></td>
-<td><p>This is a derived method from the parent class</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#example.Parent.parent_method" title="example.Parent.parent_method"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parent_method</span></code></a>()</p></td>
+<td><p>This is a parent method.</p></td>
 </tr>
 </tbody>
 </table>
-<p>Note that the <cite>autosummary</cite> directive will only render the first target that exists as well as contains the string before the <cite>-&gt;</cite> symbol.</p>
 </section>
 </section>
 </section>

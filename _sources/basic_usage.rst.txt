@@ -69,16 +69,14 @@ Which will be rendered as:
 
     example.Parent.parent_method|example.Child.parent_method
 
-You can also specify whose summary to use in the `autosummary` table::
+You can also specify a label in the `autosummary` table::
 
     .. autosummary::
 
-        Child->example.Parent.parent_method|example.Child.parent_method
+        example.Parent.parent_method|example.Child.parent_method:parent_method
 
 Which will be rendered as:
 
 .. autosummary::
 
-    Child->example.Parent.parent_method|example.Child.parent_method
-
-Note that the `autosummary` directive will only render the first target that exists as well as contains the string before the `->` symbol.
+    example.Parent.parent_method|example.Child.parent_method:parent_method
