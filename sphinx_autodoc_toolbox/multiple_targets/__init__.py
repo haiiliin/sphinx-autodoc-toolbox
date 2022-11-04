@@ -20,8 +20,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.connect("missing-reference", builtin_resolver, priority=900)
 
     return {
-        "version": sphinx.__display_version__,
-        "env_version": 3,
+        "version": "0.0.1",
         "parallel_read_safe": True,
         "parallel_write_safe": True,
     }
