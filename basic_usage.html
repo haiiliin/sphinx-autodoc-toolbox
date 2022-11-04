@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic Usage &mdash; sphinx-autodoc-toolbox 0.0.2.post19 documentation</title>
+  <title>Basic Usage &mdash; sphinx-autodoc-toolbox 0.0.2.post20 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
@@ -41,7 +41,7 @@
             <a href="index.html" class="icon icon-home"> sphinx-autodoc-toolbox
           </a>
               <div class="version">
-                0.0.2.post19
+                0.0.2.post20
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -251,18 +251,19 @@ below if an example incorporating with the <a class="reference external" href="h
 </section>
 <section id="cross-references-to-python-objects-with-multiple-targets">
 <h3>Cross references to Python objects with multiple targets<a class="headerlink" href="#cross-references-to-python-objects-with-multiple-targets" title="Permalink to this heading"></a></h3>
+<p>In order to use this feature, you must add the following to your Sphinx configuration file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx_autodoc_toolbox.multiple_targets&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
 <p>You can use the following syntax to create a cross reference to multiple targets, only the first target that exists will be rendered:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:py:class:`example.Parent|example.Unknown`
 :py:class:`example.Unknown|example.Parent`
 :py:class:`Parent &lt;example.Unknown|example.Parent&gt;`
 </pre></div>
 </div>
-<p>The above three snippets will be rendered as <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">example.Parent|example.Unknown</span></code></a>, <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">example.Unknow|example.Parent</span></code></a> and <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parent</span></code></a>. To use this feature, add the following to your Sphinx configuration file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;sphinx_autodoc_toolbox.pydomain_multiple_targets&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-</pre></div>
-</div>
+<p>The above three snippets will be rendered as <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">example.Parent|example.Unknown</span></code></a>, <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">example.Unknow|example.Parent</span></code></a> and <a class="reference internal" href="#example.Parent" title="example.Parent"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parent</span></code></a>.</p>
 <p>In the <cite>autosummary</cite> directive, you can use the following syntax to create a cross reference to multiple targets:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">autosummary</span><span class="p">::</span>
 
@@ -300,12 +301,6 @@ below if an example incorporating with the <a class="reference external" href="h
 </tbody>
 </table>
 <p>Note that the <cite>autosummary</cite> directive will only render the first target that exists as well as contains the string before the <cite>-&gt;</cite> symbol.</p>
-<p>In order to use this feature, you must add the following to your Sphinx configuration file:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;sphinx_autodoc_toolbox.autosummary_multiple_targets&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-</pre></div>
-</div>
 </section>
 </section>
 </section>
