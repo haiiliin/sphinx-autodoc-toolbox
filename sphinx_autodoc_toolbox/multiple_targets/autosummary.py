@@ -1,4 +1,3 @@
-import re
 from typing import List, Tuple
 
 from sphinx.ext.autosummary import Autosummary as SphinxAutosummary
@@ -13,8 +12,8 @@ class Autosummary(SphinxAutosummary):
         for name in names:
             label = None
             if self.separator_label in name:
-                name, label = re.split(rf"[{self.separator_label}\s]+", name, 1)
-            items.append(self.get_summary_item(super().get_items(re.split(rf"[{self.separator}\s]+", name)), label))
+                name, label = name.split(self.separator_label, 1)
+            items.append(self.get_summary_item(super().get_items(name.split(self.separator)), label))
         return items
 
     def get_summary_item(self, items: List[Tuple[str, str, str, str]], label: str) -> Tuple[str, str, str, str]:

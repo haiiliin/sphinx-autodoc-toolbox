@@ -20,8 +20,7 @@ class PythonDomain(SphinxPythonDomain):
         node: pending_xref,
         contnode: Element,
     ) -> Optional[Element]:
-        targets = target.split(self.separator)
-        for index, target in enumerate(targets):
+        for target in target.split(self.separator):
             element = super().resolve_xref(env, fromdocname, builder, type, target, node, contnode)
             if element:
                 return element
@@ -35,8 +34,7 @@ class PythonDomain(SphinxPythonDomain):
         node: pending_xref,
         contnode: Element,
     ) -> List[Tuple[str, Element]]:
-        targets = target.split(self.separator)
-        for index, target in enumerate(targets):
+        for target in target.split(self.separator):
             results = super().resolve_any_xref(env, fromdocname, builder, target, node, contnode)
             if results:
                 return results
