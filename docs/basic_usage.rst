@@ -43,17 +43,19 @@ below if an example incorporating with the `autoclasstoc <https://github.com/kal
 Cross references to Python objects with multiple targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+In order to use this feature, you must add the following to your Sphinx configuration file::
+
+    extensions = [
+        'sphinx_autodoc_toolbox.multiple_targets',
+    ]
+
 You can use the following syntax to create a cross reference to multiple targets, only the first target that exists will be rendered::
 
     :py:class:`example.Parent|example.Unknown`
     :py:class:`example.Unknown|example.Parent`
     :py:class:`Parent <example.Unknown|example.Parent>`
 
-The above three snippets will be rendered as :py:class:`example.Parent|example.Unknown`, :py:class:`example.Unknow|example.Parent` and :py:class:`Parent <example.Unknown|example.Parent>`. To use this feature, add the following to your Sphinx configuration file::
-
-    extensions = [
-        'sphinx_autodoc_toolbox.pydomain_multiple_targets',
-    ]
+The above three snippets will be rendered as :py:class:`example.Parent|example.Unknown`, :py:class:`example.Unknow|example.Parent` and :py:class:`Parent <example.Unknown|example.Parent>`.
 
 In the `autosummary` directive, you can use the following syntax to create a cross reference to multiple targets::
 
@@ -80,9 +82,3 @@ Which will be rendered as:
     Child->example.Parent.parent_method|example.Child.parent_method
 
 Note that the `autosummary` directive will only render the first target that exists as well as contains the string before the `->` symbol.
-
-In order to use this feature, you must add the following to your Sphinx configuration file::
-
-    extensions = [
-        'sphinx_autodoc_toolbox.autosummary_multiple_targets',
-    ]

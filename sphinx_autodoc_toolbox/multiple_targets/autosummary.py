@@ -1,9 +1,7 @@
 import re
-from typing import List, Tuple, Dict, Any
+from typing import List, Tuple
 
-import sphinx
-from sphinx.application import Sphinx
-from sphinx.ext.autosummary import Autosummary as SphinxAutosummary, process_generate_options
+from sphinx.ext.autosummary import Autosummary as SphinxAutosummary
 
 
 class Autosummary(SphinxAutosummary):
@@ -29,11 +27,3 @@ class Autosummary(SphinxAutosummary):
             if summary_name and summary_name in name:
                 return items[index][0], items[index][1], items[index][2], real_name
         return display_name, items[0][1], items[0][2], real_name
-
-
-def setup(app: Sphinx) -> Dict[str, Any]:
-    app.setup_extension('sphinx.ext.autodoc')
-    app.add_directive('autosummary', Autosummary)
-    app.connect('builder-inited', process_generate_options)
-
-    return {'version': sphinx.__display_version__, 'parallel_read_safe': True}
