@@ -1,3 +1,4 @@
+import re
 from typing import List, Tuple, Dict, Any
 
 import sphinx
@@ -7,23 +8,27 @@ from sphinx.ext.autosummary import Autosummary as SphinxAutosummary, process_gen
 
 class Autosummary(SphinxAutosummary):
     separator = "|"
-    separator_label = ":"
+    separator_summary = "->"
 
     def get_items(self, names: List[str]) -> List[Tuple[str, str, str, str]]:
         items = []
         for name in names:
-            label = None
-            if self.separator_label in name:
-                name, label = name.split(self.separator_label, 1)
-            items_for_name = super().get_items(name.split(self.separator))
-            display_name, sig, summary, real_name = items_for_name[0]
-            if len(items_for_name) == 1:
-                items.append((label or display_name, sig, summary, real_name))
-            else:
-                real_names = [item[3] for item in items_for_name]
-                real_name = self.separator.join(real_names)
-                items.append((label or name, sig, summary, real_name))
+            summary_name = None
+            if self.separator_summary in name:
+                summary_name, name = re.split(rf"[{self.separator_summary}\s]+", name, 1)
+            items.append(self.get_summary_item(super().get_items(re.split(rf"[{self.separator}\s]+", name)),
+                                               summary_name))
         return items
+
+    def get_summary_item(self, items: List[Tuple[str, str, str, str]], summary_name: str) -> Tuple[str, str, str, str]:
+        if len(items) == 1:
+            return items[0]
+        real_name = self.separator.join([item[3] for item in items])
+        display_name = self.separator.join([item[0] for item in items])
+        for index, (_, _, _, name) in enumerate(items):
+            if summary_name and summary_name in name:
+                return items[index][0], items[index][1], items[index][2], real_name
+        return display_name, items[0][1], items[0][2], real_name
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:

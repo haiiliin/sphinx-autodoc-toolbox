@@ -67,17 +67,19 @@ Which will be rendered as:
 
     example.Parent.parent_method|example.Child.parent_method
 
-You can also specify the displayed name of the cross reference using `:`::
+You can also specify whose summary to use in the `autosummary` table::
 
     .. autosummary::
 
-        example.Parent.parent_method|example.Child.parent_method:parent_method
+        Child->example.Parent.parent_method|example.Child.parent_method
 
 Which will be rendered as:
 
 .. autosummary::
 
-    example.Parent.parent_method|example.Child.parent_method:parent_method
+    Child->example.Parent.parent_method|example.Child.parent_method
+
+Note that the `autosummary` directive will only render the first target that exists as well as contains the string before the `->` symbol.
 
 In order to use this feature, you must add the following to your Sphinx configuration file::
 
